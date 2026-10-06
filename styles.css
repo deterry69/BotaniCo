@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: #333333; 
+    background-image: url('https://res.cloudinary.com/dbadhyp7x/image/upload/v1791304823/WhatsApp_Image_2026-10-06_at_18.38.05_f20icz.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* =========================================
+   CONTENEDORES GENERALES
+   ========================================= */
+.cards-section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(4px);
+}
+
+.container {
+    /* AQUÍ ESTÁ LA CLAVE: Ampliado a 1400px para que las tarjetas se estiren en HORIZONTAL */
+    max-width: 1400px; 
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* =========================================
+   CABECERA Y FILTROS
+   ========================================= */
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #000000; /* Texto solicitado en Negro puro */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+}
+
+.section-header h2 strong {
+    font-weight: 700;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    background-color: #f0f3eb;
+    color: #6b7280;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: white;
+}
+
+.filter-btn.active {
+    background-color: #1a3b2b;
+    color: white;
+    border-color: #1a3b2b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* =========================================
+   GRID DE TARJETAS
+   ========================================= */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .cards-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* =========================================
+   SISTEMA FLIP (GIRO 3D)
+   ========================================= */
+.flip-card {
+    perspective: 1000px;
+    width: 100%;
+    height: 620px; /* Devuelto a su altura original */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, 
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   FRONTAL DE LA TARJETA
+   ========================================= */
+.flip-card-front {
+    background-color: #f4f0ea;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 220px;
+    width: 100%;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TAMAÑO DE URGENTE MÁS GRANDE */
+.badge-urgent {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: #fde1d9;
+    color: #a53b26;
+    font-size: 0.95rem; 
+    font-weight: 700;
+    padding: 0.5rem 1.2rem;
+    border-radius: 9999px;
+}
+
+.btn-flip {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1a3b2b;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+}
+
+.btn-flip:hover {
+    background-color: white;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.location {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.875rem;
+    color: #000000; /* Texto en Negro puro */
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.date-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.date-row .date {
+    color: #000000; /* Fecha en Negro puro */
+}
+
+.days-left {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+/* =========================================
+   CALENDARIO (FORMA DE PÍLDORA CON PADDING)
+   ========================================= */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.cal-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 99px; /* Asegura forma de píldora total */
+    padding: 1rem 0; /* Alarga el fondo verticalmente sin usar width/height fijos */
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.cal-day .circle {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.cal-day span {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* Estados del calendario */
+.cal-day.checked .circle {
+    background-color: #1a3b2b;
+    color: white;
+}
+.cal-day.checked span {
+    color: #333333;
+}
+
+.cal-day.unchecked .circle {
+    color: #1a3b2b;
+}
+.cal-day.unchecked span {
+    color: #1a3b2b;
+}
+
+/* =========================================
+   TRASERA DE LA TARJETA
+   ========================================= */
+.flip-card-back {
+    transform: rotateY(180deg);
+    background-color: #f4f0ea;
+    border: 1px solid #e5e7eb;
+    padding: 2rem;
+}
+
+.back-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.back-header h3 {
+    font-size: 1.875rem;
+    color: #1a3b2b; 
+    font-weight: 500;
+}
+
+.btn-flip-back {
+    background-color: #1a3b2b;
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.btn-flip-back:hover {
+    background-color: #2b5336;
+}
+
+.description {
+    color: #4b5563;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.specs-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.specs-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spec-label {
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.spec-value {
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.diff-icons i {
+    color: #d1d5db;
+    margin-left: 2px;
+}
+.diff-icons i.active {
+    color: #1a3b2b;
+}
+
+.experience-banner {
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1a3b2b;
+    background-color: #dae8de;
+    margin-bottom: 2rem;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: auto; 
+}
+
+.avatar {
+    width: 3rem;
+    height: 3rem;
+    background-color: #e6c8a8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000; /* Texto del avatar en Negro puro */
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.user-name {
+    font-weight: 700;
+    color: #000000; /* Nombre de usuario en Negro puro */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-name i {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.user-since {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.card-footer {
+    margin-top: 2rem;
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-contact {
+    flex: 1;
+    background-color: #1a3b2b;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+}
+
+.btn-contact:hover {
+    background-color: #2b5336;
+}
+
+.btn-favorite {
+    width: 3.5rem;
+    background-color: transparent;
+    border: 1px solid #e5e7eb;
+    color: #1a3b2b;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.btn-favorite:hover {
+    background-color: white;
+}
