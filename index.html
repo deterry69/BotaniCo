@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BotaniCo - Tarjetas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Space+Grotesk:wght@300..700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,9 +17,8 @@
     <section class="cards-section">
         <div class="container">
             
-            <!-- Cabecera de sección -->
             <header class="section-header">
-                <h2><strong>Plantas</strong> que necesitan<br>ayuda ahora mismo</h2>
+                <h2>Plantas que necesitan<br>ayuda ahora mismo</h2>
                 
                 <div class="filters">
                     <button class="filter-btn active"><i class="fa-solid fa-check"></i> Todos</button>
@@ -26,15 +29,13 @@
                 </div>
             </header>
 
-            <!-- Cuadrícula de tarjetas -->
             <div class="cards-grid">
                 
-                <!-- TARJETA 1 -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="card-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1416879598555-220b3cb1a4bb?auto=format&fit=crop&w=800&q=80" alt="Jardín">
+                                <img src="https://res.cloudinary.com/dbadhyp7x/image/upload/v1791356696/jardin_rqlroe.jpg" alt="Jardín">
                                 <span class="badge-urgent">Urgente</span>
                                 <button class="btn-flip" onclick="toggleFlip(this)">
                                     <i class="fa-solid fa-rotate-right"></i>
@@ -79,8 +80,8 @@
                             <div class="user-profile">
                                 <div class="avatar">MR</div>
                                 <div class="user-info">
-                                    <p class="user-name">Mateo Ruiz <i class="fa-solid fa-shield-halved"></i></p>
-                                    <p class="user-since">Cuidador desde 2022</p>
+                                    <p class="user-name">Jorge Orti <i class="fa-solid fa-shield-halved"></i></p>
+                                    <p class="user-since">Cuidador desde 2024</p>
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -94,12 +95,11 @@
                     </div>
                 </div>
 
-                <!-- TARJETA 2 -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="card-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4ce88?auto=format&fit=crop&w=800&q=80" alt="Patio Lantanas">
+                                <img src="https://res.cloudinary.com/dbadhyp7x/image/upload/v1791356695/flor_cnhnll.jpg" alt="Patio Lantanas">
                                 <span class="badge-urgent">Urgente</span>
                                 <button class="btn-flip" onclick="toggleFlip(this)">
                                     <i class="fa-solid fa-rotate-right"></i>
@@ -158,12 +158,11 @@
                     </div>
                 </div>
 
-                <!-- TARJETA 3 -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="card-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1502427503762-b91c12d4d9b3?auto=format&fit=crop&w=800&q=80" alt="Olivo">
+                                <img src="https://res.cloudinary.com/dbadhyp7x/image/upload/v1791356696/olivo_wtpflh.jpg" alt="Olivo">
                                 <button class="btn-flip" onclick="toggleFlip(this)">
                                     <i class="fa-solid fa-rotate-right"></i>
                                 </button>
@@ -206,7 +205,7 @@
                             <div class="user-profile">
                                 <div class="avatar">SP</div>
                                 <div class="user-info">
-                                    <p class="user-name">Sofía Perez <i class="fa-solid fa-shield-halved"></i></p>
+                                    <p class="user-name">Sofía Pérez <i class="fa-solid fa-shield-halved"></i></p>
                                     <p class="user-since">Cuidador desde 2023</p>
                                 </div>
                             </div>
