@@ -1,0 +1,32 @@
+:root {
+    --bg-image: url("https://res.cloudinary.com/da9tytxsu/image/upload/f_auto,q_auto,w_1920/v1791389120/background_gqgj0n.png");
+
+  --color-forest: #10291e;      /* navbar, footer, texto principal */
+  --color-forest-600: #1f4d36;  /* botones, estados activos */
+  --color-sage: #8fa89d;        /* color de respaldo mientras carga el fondo */
+  --color-cream: #f7f3e8;       /* superficies sólidas (cards de contenido) */
+  --color-ink-soft: #3d5448;    /* texto secundario */
+  --color-muted: #5e7468;       /* tabs inactivos, placeholders */
+  --color-white: #ffffff;
+  --color-logo: #62b084;        /* wordmark sobre fondo oscuro */
+  --color-on-dark: #f7f3e8;     /* texto sobre navbar y footer */
+  --color-urgent-bg: #f6d5cb;
+  --color-urgent-fg: #8a3a27;
+
+  --font-body: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-serif);
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+
+  --navbar-height: 4.5rem;
+  --radius-card: 22px;
+  --radius-field: 6px;
+  --radius-pill: 999px;
+  --container-max: 1440px;
+  --gutter: clamp(1rem, 3.5vw, 3.125rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
