@@ -34,5 +34,106 @@
     </div>
     </header>
 
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <h1 class="hero__title" id="hero-title">
+          Ayúdanos a crecer <strong>¿Qué necesitas?</strong>
+        </h1>
+
+        <form class="search glass" action="#" method="get" role="search" aria-label="Buscar cuidados para plantas">
+          <div class="search__col">
+            <div class="kind-switch" role="group" aria-label="Tipo de elemento">
+              <button class="kind-switch__btn" type="button" aria-pressed="true">Plantas</button>
+              <button class="kind-switch__btn" type="button" aria-pressed="false">Árboles</button>
+              <button class="kind-switch__btn" type="button" aria-pressed="false">Flores</button>
+              <button class="kind-switch__btn" type="button" aria-pressed="false">Jardines</button>
+            </div>
+
+            <h2 class="search__question" id="care-question">¿Qué tipo de cuidados necesitan tus plantas?</h2>
+
+            <ul class="care" aria-labelledby="care-question">
+              <li>
+                <button class="care__btn" type="button" aria-pressed="false">
+                  <img class="care__icon" src="assets/icons/regar.svg" alt="" aria-hidden="true">
+                  <span>Regar</span>
+                </button>
+              </li>
+              <li>
+                <button class="care__btn" type="button" aria-pressed="false">
+                  <img class="care__icon" src="assets/icons/podar.svg" alt="" aria-hidden="true">
+                  <span>Podar</span>
+                </button>
+              </li>
+              <li>
+                <button class="care__btn" type="button" aria-pressed="false">
+                  <img class="care__icon" src="assets/icons/transplantar.svg" alt="" aria-hidden="true">
+                  <span>Transplantar</span>
+                </button>
+              </li>
+              <li>
+                <button class="care__btn" type="button" aria-pressed="false">
+                  <img class="care__icon" src="assets/icons/injertar.svg" alt="" aria-hidden="true">
+                  <span>Injertar</span>
+                </button>
+              </li>
+              <li>
+                <button class="care__btn" type="button" aria-pressed="false">
+                  <img class="care__icon" src="assets/icons/abonar.svg" alt="" aria-hidden="true">
+                  <span>Abonar</span>
+                </button>
+              </li>
+              <li>
+                <button class="care__btn" type="button" aria-pressed="false">
+                  <img class="care__icon" src="assets/icons/donar.svg" alt="" aria-hidden="true">
+                  <span>Donar</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="search__col">
+            <div class="role-toggle" role="group" aria-label="¿Qué quieres hacer?">
+              <button class="role-toggle__btn" type="button" aria-pressed="true">Necesito ayuda</button>
+              <button class="role-toggle__btn" type="button" aria-pressed="false">Quiero ayudar</button>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="search-where">¿Dónde?</label>
+              <div class="field__control">
+                <input class="field__input" id="search-where" name="where" type="text"
+                       placeholder="Añade una dirección" autocomplete="street-address">
+              </div>
+            </div>
+
+            <fieldset class="field">
+              <legend class="field__label">¿En qué fecha te viene bien?</legend>
+
+              <div class="field__control field__control--icon">
+                <svg class="field__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <path d="M16 2v4M8 2v4M3 10h18"/>
+                </svg>
+                <input class="field__input" id="search-from" name="from" type="text"
+                       placeholder="Inicio" aria-label="Fecha de inicio">
+              </div>
+
+              <div class="field__control field__control--icon">
+                <svg class="field__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <path d="M16 2v4M8 2v4M3 10h18"/>
+                </svg>
+                <input class="field__input" id="search-to" name="to" type="text"
+                       placeholder="Fin" aria-label="Fecha de fin">
+              </div>
+            </fieldset>
+
+            <button class="btn btn--primary btn--block search__submit" type="submit">Buscar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
 </body>
 </html>
