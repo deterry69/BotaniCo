@@ -12,6 +12,7 @@
 
     <link rel="preload" as="image" href="https://res.cloudinary.com/da9tytxsu/image/upload/f_auto,q_auto,w_1920/v1791389120/background_gqgj0n.png">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -133,7 +134,231 @@
         </form>
       </div>
     </section>
+
+
+  <section class="cards-section">
+        <div class="container">
+            
+            <!-- Cabecera de sección -->
+            <header class="section-header">
+                <h2><strong>Plantas</strong> que necesitan<br>ayuda ahora mismo</h2>
+                
+                <div class="filters">
+                    <button class="filter-btn active"><i class="fa-solid fa-check"></i> Todos</button>
+                    <button class="filter-btn">Riego</button>
+                    <button class="filter-btn">Alojamiento</button>
+                    <button class="filter-btn">Adopción</button>
+                    <button class="filter-btn">Trasplante</button>
+                </div>
+            </header>
+
+            <!-- Cuadrícula de tarjetas -->
+            <div class="cards-grid">
+                
+                <!-- TARJETA 1 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1416879598555-220b3cb1a4bb?auto=format&fit=crop&w=800&q=80" alt="Jardín">
+                                <span class="badge-urgent">Urgente</span>
+                                <button class="btn-flip" onclick="toggleFlip(this)">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                </button>
+                            </div>
+                            <div class="card-content">
+                                <p class="location"><i class="fa-solid fa-location-dot"></i> Punta Umbría · 800 m</p>
+                                <h3>Regar jardín</h3>
+                                <div class="date-row">
+                                    <span class="date">16 – 19 de julio</span>
+                                    <span class="days-left">4 días</span>
+                                </div>
+                                
+                                <div class="calendar-grid">
+                                    <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>L</span></div>
+                                    <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>M</span></div>
+                                    <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>X</span></div>
+                                    <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>J</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">20</div><span>V</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">21</div><span>S</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">22</div><span>D</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">23</div><span>L</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">24</div><span>M</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">25</div><span>X</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                                <h3>Sobre la planta</h3>
+                                <button class="btn-flip-back" onclick="toggleFlip(this)">
+                                    <i class="fa-solid fa-rotate-left"></i>
+                                </button>
+                            </div>
+                            <p class="description">Necesito una persona que pueda hacerse cargo de las plantas de mi jardín unos días.</p>
+                            <ul class="specs-list">
+                                <li><span class="spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span><span class="spec-value">Regar plantas</span></li>
+                                <li><span class="spec-label"><i class="fa-solid fa-sparkles"></i> Luz</span><span class="spec-value">Sol directo</span></li>
+                                <li><span class="spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span><span class="spec-value diff-icons"><i class="fa-solid fa-leaf active"></i> <i class="fa-solid fa-leaf"></i> <i class="fa-solid fa-leaf"></i></span></li>
+                            </ul>
+                            <div class="experience-banner no-exp">No hace falta experiencia</div>
+                            <div class="user-profile">
+                                <div class="avatar">MR</div>
+                                <div class="user-info">
+                                    <p class="user-name">Mateo Ruiz <i class="fa-solid fa-shield-halved"></i></p>
+                                    <p class="user-since">Cuidador desde 2022</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                                <div class="action-buttons">
+                                    <button class="btn-contact">Contactar</button>
+                                    <button class="btn-favorite"><i class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA 2 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4ce88?auto=format&fit=crop&w=800&q=80" alt="Patio Lantanas">
+                                <span class="badge-urgent">Urgente</span>
+                                <button class="btn-flip" onclick="toggleFlip(this)">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                </button>
+                            </div>
+                            <div class="card-content">
+                                <p class="location"><i class="fa-solid fa-location-dot"></i> La Herradura · 400 m</p>
+                                <h3>Podar patio de lantanas</h3>
+                                <div class="date-row">
+                                    <span class="date">21 de julio</span>
+                                    <span class="days-left">1 día</span>
+                                </div>
+                                <div class="calendar-grid">
+                                    <div class="cal-day unchecked"><div class="circle">16</div><span>L</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">17</div><span>M</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">18</div><span>X</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">19</div><span>J</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">20</div><span>V</span></div>
+                                    <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>S</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">22</div><span>D</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">23</div><span>L</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">24</div><span>M</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">25</div><span>X</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                                <h3>Sobre la planta</h3>
+                                <button class="btn-flip-back" onclick="toggleFlip(this)">
+                                    <i class="fa-solid fa-rotate-left"></i>
+                                </button>
+                            </div>
+                            <p class="description">Busco una persona que pueda venir un día a podar las lantanas de mi patio.</p>
+                            <ul class="specs-list">
+                                <li><span class="spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span><span class="spec-value">Poda</span></li>
+                                <li><span class="spec-label"><i class="fa-solid fa-sparkles"></i> Luz</span><span class="spec-value">Sol indirecto</span></li>
+                                <li><span class="spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span><span class="spec-value diff-icons"><i class="fa-solid fa-leaf active"></i> <i class="fa-solid fa-leaf active"></i> <i class="fa-solid fa-leaf"></i></span></li>
+                            </ul>
+                            <div class="experience-banner exp-needed">Hace falta experiencia</div>
+                            <div class="user-profile">
+                                <div class="avatar">SV</div>
+                                <div class="user-info">
+                                    <p class="user-name">Sara Vilches <i class="fa-solid fa-shield-halved"></i></p>
+                                    <p class="user-since">Cuidador desde 2022</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                                <div class="action-buttons">
+                                    <button class="btn-contact">Contactar</button>
+                                    <button class="btn-favorite"><i class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA 3 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1502427503762-b91c12d4d9b3?auto=format&fit=crop&w=800&q=80" alt="Olivo">
+                                <button class="btn-flip" onclick="toggleFlip(this)">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                </button>
+                            </div>
+                            <div class="card-content">
+                                <p class="location"><i class="fa-solid fa-location-dot"></i> Benaocaz · 1200 m</p>
+                                <h3>Transplantar olivo</h3>
+                                <div class="date-row">
+                                    <span class="date">18 de julio</span>
+                                    <span class="days-left">1 día</span>
+                                </div>
+                                <div class="calendar-grid">
+                                    <div class="cal-day unchecked"><div class="circle">16</div><span>L</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">17</div><span>M</span></div>
+                                    <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>X</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">19</div><span>J</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">20</div><span>V</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">21</div><span>S</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">22</div><span>D</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">23</div><span>L</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">24</div><span>M</span></div>
+                                    <div class="cal-day unchecked"><div class="circle">25</div><span>X</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                                <h3>Sobre la planta</h3>
+                                <button class="btn-flip-back" onclick="toggleFlip(this)">
+                                    <i class="fa-solid fa-rotate-left"></i>
+                                </button>
+                            </div>
+                            <p class="description">Tengo un olivo en mi jardín y me gustaría que alguien se lo pudiese llevar y darle una nueva vida.</p>
+                            <ul class="specs-list">
+                                <li><span class="spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span><span class="spec-value">Transplantar</span></li>
+                                <li><span class="spec-label"><i class="fa-solid fa-sparkles"></i> Luz</span><span class="spec-value">Sol directo</span></li>
+                                <li><span class="spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span><span class="spec-value diff-icons"><i class="fa-solid fa-leaf active"></i> <i class="fa-solid fa-leaf active"></i> <i class="fa-solid fa-leaf active"></i></span></li>
+                            </ul>
+                            <div class="experience-banner exp-needed">Hace falta experiencia</div>
+                            <div class="user-profile">
+                                <div class="avatar">SP</div>
+                                <div class="user-info">
+                                    <p class="user-name">Sofía Perez <i class="fa-solid fa-shield-halved"></i></p>
+                                    <p class="user-since">Cuidador desde 2023</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                                <div class="action-buttons">
+                                    <button class="btn-contact">Contactar</button>
+                                    <button class="btn-favorite"><i class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
   </main>
 
+      <script>
+        function toggleFlip(button) {
+            const card = button.closest('.flip-card');
+            if (card) {
+                card.classList.toggle('flipped');
+            }
+        }
+    </script>
 </body>
 </html>
