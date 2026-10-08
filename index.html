@@ -7,7 +7,7 @@
     <meta name="description" content="Plataforma que conecta personas con causas vegetales urgentes sin andarse por las ramas.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preload" as="image" href="https://res.cloudinary.com/da9tytxsu/image/upload/f_auto,q_auto,w_1920/v1791389120/background_gqgj0n.png">
     <link rel="stylesheet" href="styles.css">
@@ -118,213 +118,790 @@
                 </form>
             </div>
         </section>
-        <section class="cards-section">
-            <div class="container-cards">
-                <header class="section-header">
-                    <h2><strong>Plantas</strong> que necesitan<br>ayuda ahora mismo</h2>
-                    <div class="filters">
-                        <button class="filter-btn active"><i class="fa-solid fa-check"></i> Todos</button>
-                        <button class="filter-btn">Riego</button>
-                        <button class="filter-btn">Alojamiento</button>
-                        <button class="filter-btn">Adopción</button>
-                        <button class="filter-btn">Trasplante</button>
+        <section class="cards">
+            <div class="cards__container">
+                <header class="cards__header">
+                    <h2 class="cards__section-title"><strong class="cards__section-title-highlight">Plantas</strong> que necesitan<br>ayuda ahora mismo</h2>
+                    <div class="cards__filters">
+                        <button class="cards__filter cards__filter--active"><i class="fa-solid fa-check"></i> Todos</button>
+                        <button class="cards__filter">Riego</button>
+                        <button class="cards__filter">Alojamiento</button>
+                        <button class="cards__filter">Adopción</button>
+                        <button class="cards__filter">Trasplante</button>
                     </div>
                 </header>
-                <div class="cards-grid">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="card-image-wrapper">
-                                    <img src="https://res.cloudinary.com/dbadhyp7x/image/upload/v1791356696/jardin_rqlroe.jpg" alt="Jardín">
-                                    <span class="badge-urgent">Urgente</span>
-                                    <button class="btn-flip" onclick="toggleFlip(this)">
+                <div class="cards__grid">
+                    <div class="cards__card">
+                        <div class="cards__card-inner">
+                            <div class="cards__card-front">
+                                <div class="cards__image">
+                                    <img class="cards__image-photo" src="https://res.cloudinary.com/dbadhyp7x/image/upload/v1791356696/jardin_rqlroe.jpg" alt="Jardín">
+                                    <span class="cards__badge">Urgente</span>
+                                    <button class="cards__flip" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
                                         <i class="fa-solid fa-rotate-right"></i>
                                     </button>
                                 </div>
-                                <div class="card-content">
-                                    <p class="location"><i class="fa-solid fa-location-dot"></i> Punta Umbría · 800 m</p>
-                                    <h3>Regar jardín</h3>
-                                    <div class="date-row">
-                                        <span class="date">16 – 19 de julio</span>
-                                        <span class="days-left">4 días</span>
+                                <div class="cards__content">
+                                    <p class="cards__location"><i class="fa-solid fa-location-dot"></i> Punta Umbría · 800 m</p>
+                                    <h3 class="cards__card-title">Regar jardín</h3>
+                                    <div class="cards__date-row">
+                                        <span class="cards__date">16 – 19 de julio</span>
+                                        <span class="cards__days-left">4 días</span>
                                     </div>
-                                    <div class="calendar-grid">
-                                        <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>L</span></div>
-                                        <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>M</span></div>
-                                        <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>X</span></div>
-                                        <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>J</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">20</div><span>V</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">21</div><span>S</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">22</div><span>D</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">23</div><span>L</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">24</div><span>M</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">25</div><span>X</span></div>
+                                    <div class="cards__calendar">
+                                        <div class="cards__day cards__day--checked">
+                                            <div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div>
+                                            <span class="cards__day-label">L</span>
+                                        </div>
+                                        <div class="cards__day cards__day--checked">
+                                            <div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div>
+                                            <span class="cards__day-label">M</span>
+                                        </div>
+                                        <div class="cards__day cards__day--checked">
+                                            <div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div>
+                                            <span class="cards__day-label">X</span>
+                                        </div>
+                                        <div class="cards__day cards__day--checked">
+                                            <div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div>
+                                            <span class="cards__day-label">J</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">20</div>
+                                            <span class="cards__day-label">V</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">21</div>
+                                            <span class="cards__day-label">S</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">22</div>
+                                            <span class="cards__day-label">D</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">23</div>
+                                            <span class="cards__day-label">L</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">24</div>
+                                            <span class="cards__day-label">M</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">25</div>
+                                            <span class="cards__day-label">X</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flip-card-back">
-                                <div class="back-header">
-                                    <h3>Sobre la planta</h3>
-                                    <button class="btn-flip-back" onclick="toggleFlip(this)">
+                            <div class="cards__card-back">
+                                <div class="cards__back-header">
+                                    <h3 class="cards__back-title">Sobre la planta</h3>
+                                    <button class="cards__flip cards__flip--back" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
                                         <i class="fa-solid fa-rotate-left"></i>
                                     </button>
                                 </div>
-                                <p class="description">Necesito una persona que pueda hacerse cargo de las plantas de mi jardín unos días.</p>
-                                <ul class="specs-list">
-                                    <li><span class="spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span><span class="spec-value">Regar plantas</span></li>
-                                    <li><span class="spec-label"><i class="fa-solid fa-sparkles"></i> Luz</span><span class="spec-value">Sol directo</span></li>
-                                    <li><span class="spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span><span class="spec-value diff-icons"><i class="fa-solid fa-leaf active"></i> <i class="fa-solid fa-leaf"></i> <i class="fa-solid fa-leaf"></i></span></li>
+                                <p class="cards__description">Necesito una persona que pueda hacerse cargo de las plantas de mi jardín unos días.</p>
+                                <ul class="cards__specs">
+                                    <li class="cards__spec">
+                                        <span class="cards__spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span>
+                                        <span class="cards__spec-value">Regar plantas</span>
+                                    </li>
+                                    <li class="cards__spec">
+                                        <span class="cards__spec-label"><i class="fa-solid fa-sun"></i> Luz</span>
+                                        <span class="cards__spec-value">Sol directo</span>
+                                    </li>
+                                    <li class="cards__spec">
+                                        <span class="cards__spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span>
+                                        <span class="cards__difficulty"><i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon"></i> <i class="fa-solid fa-leaf cards__difficulty-icon"></i></span>
+                                    </li>
                                 </ul>
-                                <div class="experience-banner no-exp">No hace falta experiencia</div>
-                                <div class="user-profile">
-                                    <div class="avatar">JO</div>
-                                    <div class="user-info">
-                                        <p class="user-name">Jorge Orti <i class="fa-solid fa-shield-halved"></i></p>
-                                        <p class="user-since">Cuidador desde 2024</p>
+                                <div class="cards__experience cards__experience--none">No hace falta experiencia</div>
+                                <div class="cards__profile">
+                                    <div class="cards__avatar">JO</div>
+                                    <div class="cards__user-info">
+                                        <p class="cards__user-name">Jorge Orti <i class="fa-solid fa-shield-halved cards__user-badge"></i></p>
+                                        <p class="cards__user-since">Cuidador desde 2024</p>
                                     </div>
                                 </div>
-                                <div class="card-footer">
-                                    <p class="disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
-                                    <div class="action-buttons">
-                                        <button class="btn-contact">Contactar</button>
-                                        <button class="btn-favorite"><i class="fa-regular fa-heart"></i></button>
+                                <div class="cards__card-footer">
+                                    <p class="cards__disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                                    <div class="cards__actions">
+                                        <button class="cards__contact" type="button">Contactar</button>
+                                        <button class="cards__favorite" type="button" aria-label="Añadir a favoritos"><i class="fa-regular fa-heart"></i></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="card-image-wrapper">
-                                    <img src="https://res.cloudinary.com/dbadhyp7x/image/upload/v1791356695/flor_cnhnll.jpg" alt="Patio Lantanas">
-                                    <span class="badge-urgent">Urgente</span>
-                                    <button class="btn-flip" onclick="toggleFlip(this)">
+                    <div class="cards__card">
+                        <div class="cards__card-inner">
+                            <div class="cards__card-front">
+                                <div class="cards__image">
+                                    <img class="cards__image-photo" src="https://res.cloudinary.com/dbadhyp7x/image/upload/v1791356695/flor_cnhnll.jpg" alt="Patio Lantanas">
+                                    <span class="cards__badge">Urgente</span>
+                                    <button class="cards__flip" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
                                         <i class="fa-solid fa-rotate-right"></i>
                                     </button>
                                 </div>
-                                <div class="card-content">
-                                    <p class="location"><i class="fa-solid fa-location-dot"></i> La Herradura · 400 m</p>
-                                    <h3>Podar patio de lantanas</h3>
-                                    <div class="date-row">
-                                        <span class="date">21 de julio</span>
-                                        <span class="days-left">1 día</span>
+                                <div class="cards__content">
+                                    <p class="cards__location"><i class="fa-solid fa-location-dot"></i> La Herradura · 400 m</p>
+                                    <h3 class="cards__card-title">Podar patio de lantanas</h3>
+                                    <div class="cards__date-row">
+                                        <span class="cards__date">21 de julio</span>
+                                        <span class="cards__days-left">1 día</span>
                                     </div>
-                                    <div class="calendar-grid">
-                                        <div class="cal-day unchecked"><div class="circle">16</div><span>L</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">17</div><span>M</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">18</div><span>X</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">19</div><span>J</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">20</div><span>V</span></div>
-                                        <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>S</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">22</div><span>D</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">23</div><span>L</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">24</div><span>M</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">25</div><span>X</span></div>
+                                    <div class="cards__calendar">
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">16</div>
+                                            <span class="cards__day-label">L</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">17</div>
+                                            <span class="cards__day-label">M</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">18</div>
+                                            <span class="cards__day-label">X</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">19</div>
+                                            <span class="cards__day-label">J</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">20</div>
+                                            <span class="cards__day-label">V</span>
+                                        </div>
+                                        <div class="cards__day cards__day--checked">
+                                            <div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div>
+                                            <span class="cards__day-label">S</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">22</div>
+                                            <span class="cards__day-label">D</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">23</div>
+                                            <span class="cards__day-label">L</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">24</div>
+                                            <span class="cards__day-label">M</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">25</div>
+                                            <span class="cards__day-label">X</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flip-card-back">
-                                <div class="back-header">
-                                    <h3>Sobre la planta</h3>
-                                    <button class="btn-flip-back" onclick="toggleFlip(this)">
+                            <div class="cards__card-back">
+                                <div class="cards__back-header">
+                                    <h3 class="cards__back-title">Sobre la planta</h3>
+                                    <button class="cards__flip cards__flip--back" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
                                         <i class="fa-solid fa-rotate-left"></i>
                                     </button>
                                 </div>
-                                <p class="description">Busco una persona que pueda venir un día a podar las lantanas de mi patio.</p>
-                                <ul class="specs-list">
-                                    <li><span class="spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span><span class="spec-value">Poda</span></li>
-                                    <li><span class="spec-label"><i class="fa-solid fa-sparkles"></i> Luz</span><span class="spec-value">Sol indirecto</span></li>
-                                    <li><span class="spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span><span class="spec-value diff-icons"><i class="fa-solid fa-leaf active"></i> <i class="fa-solid fa-leaf active"></i> <i class="fa-solid fa-leaf"></i></span></li>
+                                <p class="cards__description">Busco una persona que pueda venir un día a podar las lantanas de mi patio.</p>
+                                <ul class="cards__specs">
+                                    <li class="cards__spec"><span class="cards__spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span>
+                                        <span class="cards__spec-value">Poda</span>
+                                    </li>
+                                    <li class="cards__spec">
+                                        <span class="cards__spec-label"><i class="fa-solid fa-sun"></i> Luz</span>
+                                        <span class="cards__spec-value">Sol indirecto</span>
+                                    </li>
+                                    <li class="cards__spec">
+                                        <span class="cards__spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span>
+                                        <span class="cards__difficulty"><i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon"></i></span>
+                                    </li>
                                 </ul>
-                                <div class="experience-banner exp-needed">Hace falta experiencia</div>
-                                <div class="user-profile">
-                                    <div class="avatar">SV</div>
-                                    <div class="user-info">
-                                        <p class="user-name">Sara Vilches <i class="fa-solid fa-shield-halved"></i></p>
-                                        <p class="user-since">Cuidador desde 2022</p>
+                                <div class="cards__experience cards__experience--required">Se valora experiencia</div>
+                                <div class="cards__profile">
+                                    <div class="cards__avatar">SV</div>
+                                    <div class="cards__user-info">
+                                        <p class="cards__user-name">Sara Vilches <i class="fa-solid fa-shield-halved"></i></p>
+                                        <p class="cards__user-since">Cuidador desde 2022</p>
                                     </div>
                                 </div>
-                                <div class="card-footer">
-                                    <p class="disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
-                                    <div class="action-buttons">
-                                        <button class="btn-contact">Contactar</button>
-                                        <button class="btn-favorite"><i class="fa-regular fa-heart"></i></button>
+                                <div class="cards__card-footer">
+                                    <p class="cards__disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                                    <div class="cards__actions">
+                                        <button class="cards__contact" type="button">Contactar</button>
+                                        <button class="cards__favorite" type="button" aria-label="Añadir a favoritos"><i class="fa-regular fa-heart"></i></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="card-image-wrapper">
-                                    <img src="https://res.cloudinary.com/dbadhyp7x/image/upload/v1791356696/olivo_wtpflh.jpg" alt="Olivo">
-                                    <button class="btn-flip" onclick="toggleFlip(this)">
+                    <div class="cards__card">
+                        <div class="cards__card-inner">
+                            <div class="cards__card-front">
+                                <div class="cards__image">
+                                    <img class="cards__image-photo" src="https://res.cloudinary.com/dbadhyp7x/image/upload/v1791356696/olivo_wtpflh.jpg" alt="Olivo">
+                                    <button class="cards__flip" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
                                         <i class="fa-solid fa-rotate-right"></i>
                                     </button>
                                 </div>
-                                <div class="card-content">
-                                    <p class="location"><i class="fa-solid fa-location-dot"></i> Benaocaz · 1200 m</p>
-                                    <h3>Transplantar olivo</h3>
-                                    <div class="date-row">
-                                        <span class="date">18 de julio</span>
-                                        <span class="days-left">1 día</span>
+                                <div class="cards__content">
+                                    <p class="cards__location"><i class="fa-solid fa-location-dot"></i> Benaocaz · 1200 m</p>
+                                    <h3 class="cards__card-title">Transplantar olivo</h3>
+                                    <div class="cards__date-row">
+                                        <span class="cards__date">18 de julio</span>
+                                        <span class="cards__days-left">1 día</span>
                                     </div>
-                                    <div class="calendar-grid">
-                                        <div class="cal-day unchecked"><div class="circle">16</div><span>L</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">17</div><span>M</span></div>
-                                        <div class="cal-day checked"><div class="circle"><i class="fa-solid fa-check"></i></div><span>X</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">19</div><span>J</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">20</div><span>V</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">21</div><span>S</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">22</div><span>D</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">23</div><span>L</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">24</div><span>M</span></div>
-                                        <div class="cal-day unchecked"><div class="circle">25</div><span>X</span></div>
+                                    <div class="cards__calendar">
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">16</div>
+                                            <span class="cards__day-label">L</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">17</div>
+                                            <span class="cards__day-label">M</span>
+                                        </div>
+                                        <div class="cards__day cards__day--checked">
+                                            <div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div>
+                                            <span class="cards__day-label">X</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">19</div>
+                                            <span class="cards__day-label">J</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">20</div>
+                                            <span class="cards__day-label">V</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">21</div>
+                                            <span class="cards__day-label">S</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">22</div>
+                                            <span class="cards__day-label">D</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">23</div>
+                                            <span class="cards__day-label">L</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">24</div>
+                                            <span class="cards__day-label">M</span>
+                                        </div>
+                                        <div class="cards__day cards__day--unchecked">
+                                            <div class="cards__calendar-date">25</div>
+                                            <span class="cards__day-label">X</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flip-card-back">
-                                <div class="back-header">
-                                    <h3>Sobre la planta</h3>
-                                    <button class="btn-flip-back" onclick="toggleFlip(this)">
+                            <div class="cards__card-back">
+                                <div class="cards__back-header">
+                                    <h3 class="cards__back-title">Sobre la planta</h3>
+                                    <button class="cards__flip cards__flip--back" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
                                         <i class="fa-solid fa-rotate-left"></i>
                                     </button>
                                 </div>
-                                <p class="description">Tengo un olivo en mi jardín y me gustaría que alguien se lo pudiese llevar y darle una nueva vida.</p>
-                                <ul class="specs-list">
-                                    <li><span class="spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span><span class="spec-value">Transplantar</span></li>
-                                    <li><span class="spec-label"><i class="fa-solid fa-sparkles"></i> Luz</span><span class="spec-value">Sol directo</span></li>
-                                    <li><span class="spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span><span class="spec-value diff-icons"><i class="fa-solid fa-leaf active"></i> <i class="fa-solid fa-leaf active"></i> <i class="fa-solid fa-leaf active"></i></span></li>
+                                <p class="cards__description">Tengo un olivo en mi jardín y me gustaría que alguien se lo pudiese llevar y darle una nueva vida.</p>
+                                <ul class="cards__specs">
+                                    <li class="cards__spec">
+                                        <span class="cards__spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span>
+                                        <span class="cards__spec-value">Transplantar</span>
+                                    </li>
+                                    <li class="cards__spec">
+                                        <span class="cards__spec-label"><i class="fa-solid fa-sun"></i> Luz</span>
+                                        <span class="cards__spec-value">Sol directo</span>
+                                    </li>
+                                    <li class="cards__spec">
+                                        <span class="cards__spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span>
+                                        <span class="cards__difficulty"><i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i></span>
+                                    </li>
                                 </ul>
-                                <div class="experience-banner exp-needed">Hace falta experiencia</div>
-                                <div class="user-profile">
-                                    <div class="avatar">SP</div>
-                                    <div class="user-info">
-                                        <p class="user-name">Sofía Pérez <i class="fa-solid fa-shield-halved"></i></p>
-                                        <p class="user-since">Cuidador desde 2023</p>
+                                <div class="cards__experience cards__experience--required">Hace falta experiencia</div>
+                                <div class="cards__profile">
+                                    <div class="cards__avatar">SP</div>
+                                    <div class="cards__user-info">
+                                        <p class="cards__user-name">Sofía Pérez <i class="fa-solid fa-shield-halved"></i></p>
+                                        <p class="cards__user-since">Cuidador desde 2023</p>
                                     </div>
                                 </div>
-                                <div class="card-footer">
-                                    <p class="disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
-                                    <div class="action-buttons">
-                                        <button class="btn-contact">Contactar</button>
-                                        <button class="btn-favorite"><i class="fa-regular fa-heart"></i></button>
+                                <div class="cards__card-footer">
+                                    <p class="cards__disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                                    <div class="cards__actions">
+                                        <button class="cards__contact" type="button">Contactar</button>
+                                        <button class="cards__favorite" type="button" aria-label="Añadir a favoritos"><i class="fa-regular fa-heart"></i></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                                <div class="cards__card">
+                                    <div class="cards__card-inner">
+                                        <div class="cards__card-front">
+                                            <div class="cards__image">
+                                                <img class="cards__image-photo" src="https://res.cloudinary.com/da9tytxsu/image/upload/v1791482421/limonero-joven_jfwcmp.png">
+                                                <button class="cards__flip" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
+                                                    <i class="fa-solid fa-rotate-right"></i>
+                                                </button>
+                                            </div>
+                                            <div class="cards__content">
+                                                <p class="cards__location"><i class="fa-solid fa-location-dot"></i> Sevilla · 1 km</p>
+                                                <h3 class="cards__card-title">Revisar limonero</h3>
+                                                <div class="cards__date-row">
+                                                    <span class="cards__date">22 – 24 de julio</span>
+                                                    <span class="cards__days-left">3 días</span>
+                                                </div>
+                                                <div class="cards__calendar">
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">22</div><span class="cards__day-label">L</span></div>
+                                                    <div class="cards__day cards__day--checked"><div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div><span class="cards__day-label">M</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">24</div><span class="cards__day-label">X</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">25</div><span class="cards__day-label">J</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">26</div><span class="cards__day-label">V</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">27</div><span class="cards__day-label">S</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">28</div><span class="cards__day-label">D</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">29</div><span class="cards__day-label">L</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">30</div><span class="cards__day-label">M</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">31</div><span class="cards__day-label">X</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards__card-back">
+                                            <div class="cards__back-header">
+                                                <h3 class="cards__back-title">Limonero con hojas amarillas</h3>
+                                                <button class="cards__flip cards__flip--back" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
+                                                    <i class="fa-solid fa-rotate-left"></i>
+                                                </button>
+                                            </div>
+                                            <p class="cards__description">Tengo un limonero joven en una maceta grande de la terraza. Desde hace unas semanas algunas hojas amarillean y tienen pequeños puntos; busco a alguien que revise el riego, el drenaje y si puede haber una plaga, y me aconseje cómo recuperarlo.</p>
+                                            <ul class="cards__specs">
+                                                <li class="cards__spec">
+                                                    <span class="cards__spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span>
+                                                    <span class="cards__spec-value">Revisión de hojas</span>
+                                                </li>
+                                                <li class="cards__spec">
+                                                    <span class="cards__spec-label"><i class="fa-solid fa-sun"></i> Luz</span>
+                                                    <span class="cards__spec-value">Sol directo</span>
+                                                </li>
+                                                <li class="cards__spec">
+                                                    <span class="cards__spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span>
+                                                    <span class="cards__difficulty"><i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon"></i></span>
+                                                </li>
+                                            </ul>
+                                            <div class="cards__experience cards__experience--required">Se valora experiencia</div>
+                                            <div class="cards__profile">
+                                                <div class="cards__avatar">LM</div>
+                                                <div class="cards__user-info">
+                                                    <p class="cards__user-name">Lucía Martín <i class="fa-solid fa-shield-halved cards__user-badge"></i></p>
+                                                    <p class="cards__user-since">Cuidadora desde 2025</p>
+                                                </div>
+                                            </div>
+                                            <div class="cards__card-footer">
+                                                <p class="cards__disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                                                <div class="cards__actions">
+                                                    <button class="cards__contact" type="button">Contactar</button>
+                                                    <button class="cards__favorite" type="button" aria-label="Añadir a favoritos"><i class="fa-regular fa-heart"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cards__card">
+                                    <div class="cards__card-inner">
+                                        <div class="cards__card-front">
+                                            <div class="cards__image">
+                                                <img class="cards__image-photo" src="https://res.cloudinary.com/da9tytxsu/image/upload/v1791482421/monstera_zmnyls.png">
+                                                <button class="cards__flip" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
+                                                    <i class="fa-solid fa-rotate-right"></i>
+                                                </button>
+                                            </div>
+                                            <div class="cards__content">
+                                                <p class="cards__location"><i class="fa-solid fa-location-dot"></i> Cádiz · 600 m</p>
+                                                <h3 class="cards__card-title">Regar monstera</h3>
+                                                <div class="cards__date-row">
+                                                    <span class="cards__date">23 de julio</span>
+                                                    <span class="cards__days-left">1 día</span>
+                                                </div>
+                                                <div class="cards__calendar">
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">21</div><span class="cards__day-label">L</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">22</div><span class="cards__day-label">M</span></div>
+                                                    <div class="cards__day cards__day--checked"><div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div><span class="cards__day-label">X</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">24</div><span class="cards__day-label">J</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">25</div><span class="cards__day-label">V</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">26</div><span class="cards__day-label">S</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">27</div><span class="cards__day-label">D</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">28</div><span class="cards__day-label">L</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">29</div><span class="cards__day-label">M</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">30</div><span class="cards__day-label">X</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards__card-back">
+                                            <div class="cards__back-header">
+                                                <h3 class="cards__back-title">Monstera durante mi viaje</h3>
+                                                <button class="cards__flip cards__flip--back" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
+                                                    <i class="fa-solid fa-rotate-left"></i>
+                                                </button>
+                                            </div>
+                                            <p class="cards__description">Me voy unos días y necesito que revisen mi monstera, que está junto a una ventana luminosa sin sol directo. Conviene comprobar que la capa superior del sustrato esté seca antes de regar, dejar escurrir el exceso de agua y evitar que quede agua en el plato.</p>
+                                            <ul class="cards__specs">
+                                                <li class="cards__spec">
+                                                    <span class="cards__spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span>
+                                                    <span class="cards__spec-value">Riego</span>
+                                                </li>
+                                                <li class="cards__spec">
+                                                    <span class="cards__spec-label"><i class="fa-solid fa-sun"></i> Luz</span>
+                                                    <span class="cards__spec-value">Luz indirecta</span>
+                                                </li>
+                                                <li class="cards__spec">
+                                                    <span class="cards__spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span>
+                                                    <span class="cards__difficulty"><i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon"></i> <i class="fa-solid fa-leaf cards__difficulty-icon"></i></span>
+                                                </li>
+                                            </ul>
+                                            <div class="cards__experience cards__experience--none">No hace falta experiencia</div>
+                                            <div class="cards__profile">
+                                                <div class="cards__avatar">AC</div>
+                                                <div class="cards__user-info">
+                                                    <p class="cards__user-name">Ana Cruz <i class="fa-solid fa-shield-halved cards__user-badge"></i></p>
+                                                    <p class="cards__user-since">Cuidadora desde 2024</p>
+                                                </div>
+                                            </div>
+                                            <div class="cards__card-footer">
+                                                <p class="cards__disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                                                <div class="cards__actions">
+                                                    <button class="cards__contact" type="button">Contactar</button>
+                                                    <button class="cards__favorite" type="button" aria-label="Añadir a favoritos"><i class="fa-regular fa-heart"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cards__card">
+                                    <div class="cards__card-inner">
+                                        <div class="cards__card-front">
+                                            <div class="cards__image">
+                                                <img class="cards__image-photo" src="https://res.cloudinary.com/da9tytxsu/image/upload/v1791482421/monstera-da%C3%B1ada_bx1idq.png">
+                                                <span class="cards__badge">Urgente</span>
+                                                <button class="cards__flip" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
+                                                    <i class="fa-solid fa-rotate-right"></i>
+                                                </button>
+                                            </div>
+                                            <div class="cards__content">
+                                                <p class="cards__location"><i class="fa-solid fa-location-dot"></i> Huelva · 2 km</p>
+                                                <h3 class="cards__card-title">Cuidar plantas unos días</h3>
+                                                <div class="cards__date-row">
+                                                    <span class="cards__date">24 – 27 de julio</span>
+                                                    <span class="cards__days-left">4 días</span>
+                                                </div>
+                                                <div class="cards__calendar">
+                                                    <div class="cards__day cards__day--checked"><div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div><span class="cards__day-label">L</span></div>
+                                                    <div class="cards__day cards__day--checked"><div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div><span class="cards__day-label">M</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">26</div><span class="cards__day-label">X</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">27</div><span class="cards__day-label">J</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">28</div><span class="cards__day-label">V</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">29</div><span class="cards__day-label">S</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">30</div><span class="cards__day-label">D</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">31</div><span class="cards__day-label">L</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">1</div><span class="cards__day-label">M</span></div>
+                                                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">2</div><span class="cards__day-label">X</span></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="cards__card-back">
+                                            <div class="cards__back-header">
+                                                <h3 class="cards__back-title">Cuidados antes de un viaje</h3>
+                                                <button class="cards__flip cards__flip--back" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
+                                                    <i class="fa-solid fa-rotate-left"></i>
+                                                </button>
+                                            </div>
+                                            <p class="cards__description">Estaré fuera cuatro días y necesito ayuda con una monstera, dos potos y un espatifilo. Busco a alguien que compruebe la humedad de cada maceta, riegue solo las que lo necesiten y deje las plantas en sus lugares habituales, con luz indirecta.</p>
+                                            <ul class="cards__specs">
+                                                <li class="cards__spec">
+                                                    <span class="cards__spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span>
+                                                    <span class="cards__spec-value">Riego y revisión</span>
+                                                </li>
+                                                <li class="cards__spec">
+                                                    <span class="cards__spec-label"><i class="fa-solid fa-sun"></i> Luz</span>
+                                                    <span class="cards__spec-value">Luz indirecta</span>
+                                                </li>
+                                                <li class="cards__spec">
+                                                    <span class="cards__spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span>
+                                                    <span class="cards__difficulty"><i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon"></i></span>
+                                                </li>
+                                            </ul>
+                                            <div class="cards__experience cards__experience--required">Se valora experiencia</div>
+                                            <div class="cards__profile">
+                                                <div class="cards__avatar">MR</div>
+                                                <div class="cards__user-info">
+                                                    <p class="cards__user-name">Mario Romero <i class="fa-solid fa-shield-halved cards__user-badge"></i></p>
+                                                    <p class="cards__user-since">Cuidador desde 2022</p>
+                                                </div>
+                                            </div>
+                                            <div class="cards__card-footer">
+                                                <p class="cards__disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                                                <div class="cards__actions">
+                                                    <button class="cards__contact" type="button">Contactar</button>
+                                                    <button class="cards__favorite" type="button" aria-label="Añadir a favoritos"><i class="fa-regular fa-heart"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="cards__card">
+    <div class="cards__card-inner">
+        <div class="cards__card-front">
+            <div class="cards__image">
+                <img class="cards__image-photo" src="https://res.cloudinary.com/da9tytxsu/image/upload/v1791482421/espatifilo_h1sgok.png">
+                <button class="cards__flip" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
+                <i class="fa-solid fa-rotate-right"></i>
+                </button>
+            </div>
+            <div class="cards__content">
+                <p class="cards__location"><i class="fa-solid fa-location-dot"></i> Huelva · 1 km</p>
+                <h3 class="cards__card-title">Podar ficus</h3>
+                <div class="cards__date-row">
+                    <span class="cards__date">25 de julio</span>
+                    <span class="cards__days-left">2 días</span>
+                </div>
+                <div class="cards__calendar">
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">23</div><span class="cards__day-label">L</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">24</div><span class="cards__day-label">M</span></div>
+                    <div class="cards__day cards__day--checked"><div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div><span class="cards__day-label">X</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">26</div><span class="cards__day-label">J</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">27</div><span class="cards__day-label">V</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">28</div><span class="cards__day-label">S</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">29</div><span class="cards__day-label">D</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">30</div><span class="cards__day-label">L</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">31</div><span class="cards__day-label">M</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">1</div><span class="cards__day-label">X</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="cards__card-back">
+            <div class="cards__back-header">
+                <h3 class="cards__back-title">Poda de ficus elastica</h3>
+                <button class="cards__flip cards__flip--back" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
+                <i class="fa-solid fa-rotate-left"></i>
+                </button>
+            </div>
+            <p class="cards__description">Tengo un ficus elastica de interior con una rama seca y varias hojas dañadas. Me gustaría retirar solo las partes afectadas con herramientas limpias y recibir consejos para que mantenga una forma equilibrada, sin hacer una poda drástica.</p>
+            <ul class="cards__specs">
+            <li class="cards__spec">
+            <span class="cards__spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span>
+            <span class="cards__spec-value">Poda</span>
+            </li>
+            <li class="cards__spec">
+            <span class="cards__spec-label"><i class="fa-solid fa-sun"></i> Luz</span>
+            <span class="cards__spec-value">Luz indirecta</span>
+            </li>
+            <li class="cards__spec">
+            <span class="cards__spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span>
+            <span class="cards__difficulty"><i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon"></i></span>
+            </li>
+            </ul>
+            <div class="cards__experience cards__experience--required">Se valora experiencia</div>
+            <div class="cards__profile">
+                <div class="cards__avatar">EV</div>
+                <div class="cards__user-info">
+                    <p class="cards__user-name">Elena Vega</p>
+                    <p class="cards__user-since">Cuidadora desde 2024</p>
+                </div>
+            </div>
+            <div class="cards__card-footer">
+                <p class="cards__disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                <div class="cards__actions">
+                    <button class="cards__contact" type="button">Contactar</button>
+                    <button class="cards__favorite" type="button" aria-label="Añadir a favoritos"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cards__card">
+    <div class="cards__card-inner">
+        <div class="cards__card-front">
+            <div class="cards__image">
+                <img class="cards__image-photo" src="https://res.cloudinary.com/da9tytxsu/image/upload/v1791482421/potos_ibzhhn.png">
+                <button class="cards__flip" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
+                <i class="fa-solid fa-rotate-right"></i>
+                </button>
+            </div>
+            <div class="cards__content">
+                <p class="cards__location"><i class="fa-solid fa-location-dot"></i> Cádiz · 2 km</p>
+                <h3 class="cards__card-title">Recuperar plantas tras el calor</h3>
+                <div class="cards__date-row">
+                    <span class="cards__date">26 – 28 de julio</span>
+                    <span class="cards__days-left">3 días</span>
+                </div>
+                <div class="cards__calendar">
+                    <div class="cards__day cards__day--checked"><div class="cards__calendar-date"><i class="fa-solid fa-check"></i></div><span class="cards__day-label">L</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">24</div><span class="cards__day-label">M</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">25</div><span class="cards__day-label">X</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">26</div><span class="cards__day-label">J</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">27</div><span class="cards__day-label">V</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">28</div><span class="cards__day-label">S</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">29</div><span class="cards__day-label">D</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">30</div><span class="cards__day-label">L</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">31</div><span class="cards__day-label">M</span></div>
+                    <div class="cards__day cards__day--unchecked"><div class="cards__calendar-date">1</div><span class="cards__day-label">X</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="cards__card-back">
+            <div class="cards__back-header">
+                <h3 class="cards__back-title">Recuperar plantas tras el calor</h3>
+                <button class="cards__flip cards__flip--back" type="button" aria-label="Girar tarjeta" onclick="toggleFlip(this)">
+                <i class="fa-solid fa-rotate-left"></i>
+                </button>
+            </div>
+            <p class="cards__description">Después de varios días de mucho calor, mi potos tiene hojas lacias y el espatifilo empieza a decaer. Necesito que revisen la humedad del sustrato, retiren las hojas secas y me orienten sobre cómo recuperar ambas plantas sin regarlas en exceso ni exponerlas al sol directo.</p>
+            <ul class="cards__specs">
+            <li class="cards__spec">
+            <span class="cards__spec-label"><i class="fa-regular fa-heart"></i> Cuidado</span>
+            <span class="cards__spec-value">Riego y revisión</span>
+            </li>
+            <li class="cards__spec">
+            <span class="cards__spec-label"><i class="fa-solid fa-sun"></i> Luz</span>
+            <span class="cards__spec-value">Luz indirecta</span>
+            </li>
+            <li class="cards__spec">
+            <span class="cards__spec-label"><i class="fa-solid fa-leaf"></i> Dificultad</span>
+            <span class="cards__difficulty"><i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon cards__difficulty-icon--active"></i> <i class="fa-solid fa-leaf cards__difficulty-icon"></i></span>
+            </li>
+            </ul>
+            <div class="cards__experience cards__experience--required">Se valora experiencia</div>
+            <div class="cards__profile">
+                <div class="cards__avatar">IR</div>
+                <div class="cards__user-info">
+                    <p class="cards__user-name">Irene Ruiz</p>
+                    <p class="cards__user-since">Cuidadora desde 2023</p>
+                </div>
+            </div>
+            <div class="cards__card-footer">
+                <p class="cards__disclaimer">Zona aproximada. La dirección exacta se comparte al confirmar.</p>
+                <div class="cards__actions">
+                    <button class="cards__contact" type="button">Contactar</button>
+                    <button class="cards__favorite" type="button" aria-label="Añadir a favoritos"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="steps" id="como-funciona" aria-labelledby="steps-title">
+            <div class="steps__box">
+                <p class="steps__label">Cómo funciona</p>
+                <h2 class="steps__title" id="steps-title">Tres pasos para conectar</h2>
+                <p class="steps__intro">Cuéntanos qué necesita tu planta y te ponemos en contacto con quien puede ayudarte, cerca de ti.</p>
+
+                <div class="steps__item">
+                    <span class="steps__number">01</span>
+                    <div class="steps__item-content">
+                        <h3 class="steps__item-title">Publica tu causa</h3>
+                        <p class="steps__item-description">Describe el estado de la planta, lo urgente y el tipo de cuidado que necesita. Solo lleva 2 minutos.</p>
+                    </div>
+                </div>
+
+                <div class="steps__item">
+                    <span class="steps__number">02</span>
+                    <div class="steps__item-content">
+                        <h3 class="steps__item-title">Recibe propuestas</h3>
+                        <p class="steps__item-description">Voluntarios y profesionales cercanos te escriben con su disponibilidad y experiencia.</p>
+                    </div>
+                </div>
+
+                <div class="steps__item">
+                    <span class="steps__number">03</span>
+                    <div class="steps__item-content">
+                        <h3 class="steps__item-title">Planta rescatada</h3>
+                        <p class="steps__item-description">Confirma la ayuda, comenta la visita y comparte el resultado con la comunidad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="help">
+                <div class="help__text">
+                    <h2 class="help__title">¿Te gustaría ayudar?</h2>
+                    <p class="help__description">En BotaniCO no nos andamos por las ramas: hazte cuidador y ayuda a otras personas a cuidar de sus plantas. Tú eliges cuándo, dónde y qué plantas.</p>
+                    <a class="button button--green" href="#hazte-cuidador">Hazte cuidador</a>
+                    <a class="button button--border" href="#como-funciona">Cómo funciona</a>
+                </div>
+
+                <div class="help__stats">
+                    <div class="help__stat">
+                        <span class="help__stat-value">1.200+</span>
+                        <span class="help__stat-label">plantas rescatadas</span>
+                    </div>
+                    <div class="help__stat">
+                        <span class="help__stat-value">340</span>
+                        <span class="help__stat-label">voluntarios activos</span>
+                    </div>
+                    <div class="help__stat">
+                        <span class="help__stat-value">28</span>
+                        <span class="help__stat-label">ciudades en toda España</span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <a class="footer__logo" href="#">
+                    <img class="footer__logo-image" src="assets/logo.png" alt="Logo botaniCO">
+                    <span>botaniCO</span>
+                </a>
+                <p class="footer__description">La plataforma que conecta personas con causas vegetales urgentes. Porque cada planta merece una segunda oportunidad.</p>
+                <p class="footer__place">Proyecto andaluz, hecho en España</p>
+            </div>
+
+            <div class="footer__column">
+                <h4 class="footer__column-title">Plataforma</h4>
+                <ul class="footer__column-links">
+                    <li><a class="footer__link" href="#">Causas activas</a></li>
+                    <li><a class="footer__link" href="#">Ofrecer ayuda</a></li>
+                    <li><a class="footer__link" href="#">Servicios</a></li>
+                    <li><a class="footer__link" href="#">Comunidad</a></li>
+                    <li><a class="footer__link" href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__column">
+                <h4 class="footer__column-title">Proyecto</h4>
+                <ul class="footer__column-links">
+                    <li><a class="footer__link" href="#">Quiénes somos</a></li>
+                    <li><a class="footer__link" href="#como-funciona">Cómo funciona</a></li>
+                    <li><a class="footer__link" href="#">Voluntariado</a></li>
+                    <li><a class="footer__link" href="#">Prensa</a></li>
+                    <li><a class="footer__link" href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__column">
+                <h4 class="footer__column-title">Síguenos</h4>
+                <ul class="footer__column-links">
+                    <li><a class="footer__link" href="#">Instagram</a></li>
+                    <li><a class="footer__link" href="#">TikTok</a></li>
+                    <li><a class="footer__link" href="#">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">© 2026 botaniCO. Proyecto hecho con amor.</p>
+            <ul class="footer__legal-links">
+                <li><a class="footer__link" href="#">Privacidad</a></li>
+                <li><a class="footer__link" href="#">Términos</a></li>
+                <li><a class="footer__link" href="#">Cookies</a></li>
+            </ul>
+        </div>
+    </footer>
     <script>
         function toggleFlip(button) {
-            const card = button.closest('.flip-card');
+            const card = button.closest('.cards__card');
             if (card) {
-                card.classList.toggle('flipped');
+                card.classList.toggle('cards__card--flipped');
             }
         }
     </script>
