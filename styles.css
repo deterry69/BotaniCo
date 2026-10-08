@@ -468,9 +468,6 @@ legend.field__label {
   color: var(--color-forest);
   line-height: 1.0;
 }
-.cards__section-title-highlight {
-  font-weight: 700;
-}
 .cards__section-title-line {
   display: block;
 }
