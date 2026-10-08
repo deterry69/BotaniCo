@@ -471,6 +471,9 @@ legend.field__label {
 .cards__section-title-highlight {
   font-weight: 700;
 }
+.cards__section-title-line {
+  display: block;
+}
 .cards__filters {
   display: flex;
   flex-wrap: wrap;
@@ -985,9 +988,8 @@ legend.field__label {
   font-size: 0.875rem;
   color: var(--color-logo);
 }
-.footer__place {
-  font-size: 0.75rem !important;
-  opacity: 0.7;
+.footer__description-line {
+  display: block;
 }
 .footer__column-title {
   margin-bottom: 0.9375rem;
