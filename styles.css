@@ -1,27 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Outfit', sans-serif;
-    color: #333333; 
-    background-image: url('https://res.cloudinary.com/dbadhyp7x/image/upload/v1791304823/WhatsApp_Image_2026-10-06_at_18.38.05_f20icz.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh;
-}
-
 .cards-section {
     padding: 5rem 2rem;
     min-height: 100vh;
-    background-color: rgba(255, 255, 255, 0.3); 
-    backdrop-filter: blur(4px);
 }
 
-.container {
+.container-cards {
     max-width: 1400px; 
     margin: 0 auto;
     width: 100%;
@@ -32,11 +14,8 @@ body {
 }
 
 .section-header h2 {
-    /* Nueva fuente para el Título Principal */
-    font-family: "Major Mono Display", monospace;
-    font-weight: 400;
-    font-style: normal;
-    
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
     font-size: 2.5rem;
     color: #000000; 
     text-transform: uppercase;
@@ -286,7 +265,6 @@ body {
 }
 
 .back-header h3 {
-    /* Nueva fuente para el Título Trasero también */
     font-family: "Space Grotesk", sans-serif;
     font-size: 1.875rem;
     color: #1a4231; 
