@@ -4,6 +4,9 @@ BotaniCo es una página web estática que presenta una plataforma para conectar 
 
 > Proyecto académico de diseño y desarrollo web realizado en equipo por tres personas.
 
+## Despliegue en vivo
+[![Ver en GitHub Pages](https://img.shields.io/badge/Ver_Web-GitHub_Pages-2ea44f?style=for-the-badge&logo=github)](https://deterry69.github.io/BotaniCo/)
+
 ## Diseño
 
 Algunos de los recursos visuales utilizados en la página:
@@ -109,3 +112,10 @@ Figma se utilizó para el diseño, Visual Studio Code para el desarrollo y Trell
 - Completar o ajustar las secciones de destino de los enlaces de navegación.
 - Añadir pruebas de accesibilidad y comprobar la experiencia en distintos dispositivos y navegadores.
 - Valorar la separación del JavaScript y la gestión de imágenes y otros recursos externos.
+
+## Miembros
+
+- Daniel Pavón Téllez [GitHub](https://github.com/Daaniel-Sans) 
+- Luis Ruiz Hinojosa [GitHub](https://github.com/Hiiinojosaa) 
+- Alfonso José de Terry Pérez [GitHub](https://github.com/deterry69)
+
